@@ -12,15 +12,87 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Test" Type="Folder">
+			<Item Name="SingleSampleAnalogOutputOndemand" Type="NI-DAQmx Task">
+				<Property Name="\0\AO.Max" Type="Str">10</Property>
+				<Property Name="\0\AO.Min" Type="Str">-10</Property>
+				<Property Name="\0\AO.OutputType" Type="Str">Voltage</Property>
+				<Property Name="\0\AO.TermCfg" Type="Str">RSE</Property>
+				<Property Name="\0\AO.Voltage.Units" Type="Str">Volts</Property>
+				<Property Name="\0\ChanType" Type="Str">Analog Output</Property>
+				<Property Name="\0\Name" Type="Str">SingleSampleAnalogOutputOndemand/VoltageOut_0</Property>
+				<Property Name="\0\PhysicalChanName" Type="Str">Dev3/ao0</Property>
+				<Property Name="\1\AO.Max" Type="Str">10</Property>
+				<Property Name="\1\AO.Min" Type="Str">-10</Property>
+				<Property Name="\1\AO.OutputType" Type="Str">Voltage</Property>
+				<Property Name="\1\AO.TermCfg" Type="Str">RSE</Property>
+				<Property Name="\1\AO.Voltage.Units" Type="Str">Volts</Property>
+				<Property Name="\1\ChanType" Type="Str">Analog Output</Property>
+				<Property Name="\1\Name" Type="Str">SingleSampleAnalogOutputOndemand/VoltageOut_1</Property>
+				<Property Name="\1\PhysicalChanName" Type="Str">Dev3/ao1</Property>
+				<Property Name="Channels" Type="Str">SingleSampleAnalogOutputOndemand/VoltageOut_0, SingleSampleAnalogOutputOndemand/VoltageOut_1</Property>
+				<Property Name="Name" Type="Str">SingleSampleAnalogOutputOndemand</Property>
+				<Property Name="SampTimingType" Type="Str">On Demand</Property>
+			</Item>
+			<Item Name="MultisampleVoltageInput" Type="NI-DAQmx Task">
+				<Property Name="\0\AI.Max" Type="Str">10</Property>
+				<Property Name="\0\AI.MeasType" Type="Str">Voltage</Property>
+				<Property Name="\0\AI.Min" Type="Str">-10</Property>
+				<Property Name="\0\AI.TermCfg" Type="Str">RSE</Property>
+				<Property Name="\0\AI.Voltage.Units" Type="Str">Volts</Property>
+				<Property Name="\0\ChanType" Type="Str">Analog Input</Property>
+				<Property Name="\0\Name" Type="Str">MultisampleVoltageInput/Voltage_0</Property>
+				<Property Name="\0\PhysicalChanName" Type="Str">Dev1/ai0</Property>
+				<Property Name="\1\AI.Max" Type="Str">10</Property>
+				<Property Name="\1\AI.MeasType" Type="Str">Voltage</Property>
+				<Property Name="\1\AI.Min" Type="Str">-10</Property>
+				<Property Name="\1\AI.TermCfg" Type="Str">RSE</Property>
+				<Property Name="\1\AI.Voltage.Units" Type="Str">Volts</Property>
+				<Property Name="\1\ChanType" Type="Str">Analog Input</Property>
+				<Property Name="\1\Name" Type="Str">MultisampleVoltageInput/Voltage_1</Property>
+				<Property Name="\1\PhysicalChanName" Type="Str">Dev1/ai1</Property>
+				<Property Name="\2\AI.Max" Type="Str">10</Property>
+				<Property Name="\2\AI.MeasType" Type="Str">Voltage</Property>
+				<Property Name="\2\AI.Min" Type="Str">-10</Property>
+				<Property Name="\2\AI.TermCfg" Type="Str">RSE</Property>
+				<Property Name="\2\AI.Voltage.Units" Type="Str">Volts</Property>
+				<Property Name="\2\ChanType" Type="Str">Analog Input</Property>
+				<Property Name="\2\Name" Type="Str">MultisampleVoltageInput/Voltage_2</Property>
+				<Property Name="\2\PhysicalChanName" Type="Str">Dev1/ai2</Property>
+				<Property Name="\3\AI.Max" Type="Str">10</Property>
+				<Property Name="\3\AI.MeasType" Type="Str">Voltage</Property>
+				<Property Name="\3\AI.Min" Type="Str">-10</Property>
+				<Property Name="\3\AI.TermCfg" Type="Str">RSE</Property>
+				<Property Name="\3\AI.Voltage.Units" Type="Str">Volts</Property>
+				<Property Name="\3\ChanType" Type="Str">Analog Input</Property>
+				<Property Name="\3\Name" Type="Str">MultisampleVoltageInput/Voltage_3</Property>
+				<Property Name="\3\PhysicalChanName" Type="Str">Dev1/ai3</Property>
+				<Property Name="Channels" Type="Str">MultisampleVoltageInput/Voltage_0, MultisampleVoltageInput/Voltage_1, MultisampleVoltageInput/Voltage_2, MultisampleVoltageInput/Voltage_3</Property>
+				<Property Name="Name" Type="Str">MultisampleVoltageInput</Property>
+				<Property Name="SampClk.ActiveEdge" Type="Str">Rising</Property>
+				<Property Name="SampClk.Rate" Type="Str">1000</Property>
+				<Property Name="SampClk.Src" Type="Str"></Property>
+				<Property Name="SampQuant.SampMode" Type="Str">Continuous Samples</Property>
+				<Property Name="SampQuant.SampPerChan" Type="Str">100</Property>
+				<Property Name="SampTimingType" Type="Str">Sample Clock</Property>
+			</Item>
 			<Item Name="DAQmx Voltage Task.vi" Type="VI" URL="../Test/DAQmx Voltage Task.vi"/>
+			<Item Name="Test DAQmx Bus Analog Output.vi" Type="VI" URL="../Test/Test DAQmx Bus Analog Output.vi"/>
+			<Item Name="Test DAQmx Bus Digital Input.vi" Type="VI" URL="../Test/Test DAQmx Bus Digital Input.vi"/>
+			<Item Name="Test DAQmx Bus Multisample Analog Input.vi" Type="VI" URL="../Test/Test DAQmx Bus Multisample Analog Input.vi"/>
 			<Item Name="Test DAQmx Bus Analog Input.vi" Type="VI" URL="../Test/Test DAQmx Bus Analog Input.vi"/>
 		</Item>
 		<Item Name="Support" Type="Folder">
+			<Item Name="DAQmx - Analog Input Multi Sample.lvclass" Type="LVClass" URL="../Source/Support/Task Handlers/Analog In Multi Sample/DAQmx - Analog Input Multi Sample.lvclass"/>
+			<Item Name="DAQmx - Analog Output Multi Sample.lvclass" Type="LVClass" URL="../Source/Support/Task Handlers/Analog Out Multi Sample/DAQmx - Analog Output Multi Sample.lvclass"/>
 			<Item Name="DAQmx - Analog Output Single Sample.lvclass" Type="LVClass" URL="../Source/Support/Task Handlers/Analog Out Single Sample/DAQmx - Analog Output Single Sample.lvclass"/>
+			<Item Name="DAQmx - Digital Input Single Sample.lvclass" Type="LVClass" URL="../Source/Support/Task Handlers/Digital In Single Sample/DAQmx - Digital Input Single Sample.lvclass"/>
 			<Item Name="DAQmx - Analog Input Single Sample.lvclass" Type="LVClass" URL="../Source/Support/Task Handlers/Analog In Single Sample/DAQmx - Analog Input Single Sample.lvclass"/>
-			<Item Name="DAQmx-Bus_DBLType.lvclass" Type="LVClass" URL="../Source/Support/Types/DAQmx-Bus_DBLType.lvclass"/>
+			<Item Name="DAQmx-Bus_Waveform_Type.lvclass" Type="LVClass" URL="../Source/Support/Types/Waveform/DAQmx-Bus_Waveform_Type.lvclass"/>
+			<Item Name="DAQmx-Bus_Bool_Type.lvclass" Type="LVClass" URL="../Source/Support/Types/Boolean/DAQmx-Bus_Bool_Type.lvclass"/>
+			<Item Name="DAQmx-Bus_DBL_Type.lvclass" Type="LVClass" URL="../Source/Support/Types/DBL/DAQmx-Bus_DBL_Type.lvclass"/>
 		</Item>
 		<Item Name="DAQmx-Bus.lvclass" Type="LVClass" URL="../Source/DAQmx-Bus.lvclass"/>
+		<Item Name="Test DAQmx Bus Analog Input and Output.vi" Type="VI" URL="../Test/Test DAQmx Bus Analog Input and Output.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="DAQmx Fill In Error Info.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/miscellaneous.llb/DAQmx Fill In Error Info.vi"/>
